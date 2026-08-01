@@ -1,0 +1,14 @@
+
+import pandas as pd 
+def ler():
+    estoque =  pd.read_csv("produtos.csv")
+
+    obejeto = input("digite o nome do objeto").strip().lower()
+
+    resultado = estoque[estoque['nome'].str.lower() == obejeto]
+
+    if resultado.empty:
+        print("obejeto nao encontrado")
+    else:
+        print("dados do obejeto: ")
+        print(resultado)
