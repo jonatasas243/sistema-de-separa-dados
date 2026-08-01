@@ -1,0 +1,11 @@
+import pandas as pd
+def excluir():
+    dados = pd.read_csv("produtos.csv")
+
+    execluir = input("digite o arquivo que voce que apaga: ").strip().lower()
+
+    dados_filtro = dados[dados['nome'].str.lower() != execluir]
+
+    dados_filtro.to_csv("produtos.csv",index=False)
+
+    print(f"seu objeto {execluir} foi execluido com sucesso")
