@@ -1,0 +1,41 @@
+import csv 
+import os 
+dados = "produtos.csv"
+
+def inicial():
+
+    if not os.path.exists(dados):
+       with open(dados,'w',newline='',encoding='utf-8') as arq :
+        escreve = csv.writer(arq)
+        escreve.writerow(['nome','preco','tipo'])
+
+
+
+def cria_um_estoque():
+    objeto = inicial()
+
+    novo_obejeto=input("digite o nome do obejeto").strip().lower()
+    
+    if not novo_obejeto:
+        print("nao pode esta vazio")
+        return
+
+
+    preco = float(input("digite o o valor do obejeto")) 
+
+    if not preco:
+        print("nao pode esta vazia")
+        return
+
+    tipo = input("digite o tipo do obejeto").strip().lower()
+    
+    if not tipo :
+        print("nao pode ta vazio")
+        return
+    
+    with open(dados,'a',newline='',encoding='utf-8') as arq:
+        salva = csv.writer(arq)
+        salva.writerow([novo_obejeto,preco,tipo])
+        print(f"estoque {novo_obejeto}salvo com sucesso")
+
+
