@@ -1,0 +1,26 @@
+
+from cria__estoque import inicial,cria_um_estoque
+from ler_estoque import ler
+from execluir_estoque import excluir
+while True:
+    inicial()
+    print("="*40)
+    print('MENU PRINCIPAL')
+    print('='*40)
+    print('digite 1 para cria um estoque')
+    print("digite 2 para ler um estoque")
+    print('digite 3 para excluir um estoque')
+    print('digite 4 para finalixa o programa')
+
+    tarefa = input("digite qual e (1-4)")
+    if tarefa == '1':
+        cria_um_estoque()
+    elif tarefa == '2':
+        ler()
+    elif tarefa == '3':
+        excluir()
+    elif tarefa == '4':
+        print('obrigado por utiliza o poprama')
+        break
+    else:
+        print('alternativa errada')
